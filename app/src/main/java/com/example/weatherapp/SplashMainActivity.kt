@@ -1,13 +1,16 @@
 package com.example.weatherapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.example.weatherapp.base.BaseActivity
 import com.example.weatherapp.databinding.ActivityMainBinding
+import com.example.weatherapp.ui.activities.DashboardActivity
 
-class SplashMainActivity : AppCompatActivity() {
+class SplashMainActivity : BaseActivity() {
 
     lateinit var mBinding : ActivityMainBinding
     var imgAnim : Animation?=null
@@ -19,5 +22,10 @@ class SplashMainActivity : AppCompatActivity() {
 
         imgAnim= AnimationUtils.loadAnimation(this,R.anim.img_down)
         mBinding.splashImageview.startAnimation(imgAnim)
+
+        mBinding.getStartedBtn.setOnClickListener {
+            startActivity(Intent(this,DashboardActivity::class.java))
+            finish()
+        }
     }
 }

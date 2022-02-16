@@ -3,4 +3,10 @@
     <string name="splash_title_text">Discover the Weather\nin Your City</string>
     <string name="splash_sub_title_text">Get to know your weather maps and\nradar precipitation forecast  </string>
     <string name="get_started">Get Started</string>
+    <string name="home_txt">Home</string>
+    <string name="forecast_txt">Fore Cast</string>
+    <string name="radar_txt">Radar</string>
+    <string name="settings_txt">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

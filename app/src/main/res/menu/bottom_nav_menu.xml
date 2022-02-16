@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="@string/home_txt"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:id="@+id/forecastFragment"
+        android:title="@string/forecast_txt"
+        android:icon="@drawable/ic_sunny"
+        />
+
+    <item
+        android:id="@+id/radarFragment"
+        android:title="@string/radar_txt"
+        android:icon="@drawable/ic_location"
+        />
+
+    <item
+        android:id="@+id/settingFragment"
+        android:title="@string/settings_txt"
+        android:icon="@drawable/ic_settings"
+        />
+
+</menu>

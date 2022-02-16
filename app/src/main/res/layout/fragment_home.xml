@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/sixteen_dp"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <TextView
+        android:id="@+id/city_state_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calicut, Kerala"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twenty_four_sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/day_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sunday, 1 AM"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_state_tv" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+
+    <ImageView
+        android:id="@+id/weather_image"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
+        app:srcCompat="@drawable/weather_app" />
+
+    <TextView
+        android:id="@+id/temp_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:text="28°"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintLeft_toLeftOf="@id/weather_image"
+        app:layout_constraintRight_toRightOf="@id/weather_image"
+        app:layout_constraintTop_toBottomOf="@+id/weather_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Partly Cloudy"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@id/temp_tv"
+        app:layout_constraintRight_toRightOf="@id/temp_tv"
+        app:layout_constraintTop_toBottomOf="@+id/temp_tv" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llToday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grey_bg"
+        android:padding="@dimen/eight_dp"
+        app:layout_constraintTop_toBottomOf="@+id/guideline4">
+
+        <TextView
+            android:id="@+id/day_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen_sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pressure_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sixteen_dp"
+            android:text="Pressure"
+            app:layout_constraintLeft_toLeftOf="@+id/day_tv"
+            app:layout_constraintTop_toBottomOf="@+id/day_tv" />
+
+
+        <TextView
+            android:id="@+id/pressure_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="810mb"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen_sp"
+            app:layout_constraintLeft_toLeftOf="@+id/pressure_title_tv"
+            app:layout_constraintRight_toRightOf="@+id/pressure_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/pressure_title_tv" />
+
+
+        <TextView
+            android:id="@+id/visibility_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteen_dp"
+            android:layout_marginTop="@dimen/sixteen_dp"
+            android:text="Visibility"
+            app:layout_constraintLeft_toRightOf="@id/pressure_title_tv"
+            app:layout_constraintRight_toLeftOf="@+id/humidity_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/day_tv" />
+
+
+        <TextView
+            android:id="@+id/visibility_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 Km"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen_sp"
+            app:layout_constraintLeft_toLeftOf="@+id/visibility_title_tv"
+            app:layout_constraintRight_toRightOf="@+id/visibility_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/visibility_title_tv" />
+
+        <TextView
+            android:id="@+id/humidity_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteen_dp"
+            android:layout_marginTop="@dimen/sixteen_dp"
+            android:text="Humidity"
+            app:layout_constraintLeft_toRightOf="@id/visibility_title_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/day_tv" />
+
+
+        <TextView
+            android:id="@+id/humidity_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="94 %"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sixteen_sp"
+            app:layout_constraintLeft_toLeftOf="@+id/humidity_title_tv"
+            app:layout_constraintRight_toRightOf="@+id/humidity_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/humidity_title_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/sunImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/sun"
+        android:layout_marginTop="@dimen/eight_dp"
+        app:layout_constraintTop_toBottomOf="@+id/llToday"
+        app:layout_constraintStart_toStartOf="@+id/llToday"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6:04 AM"
+        app:layout_constraintLeft_toRightOf="@+id/sunImage"
+        app:layout_constraintTop_toTopOf="@+id/sunImage"
+        app:layout_constraintBottom_toBottomOf="@+id/sunImage"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:layout_marginStart="@dimen/eight_dp"
+        />
+
+
+    <ImageView
+        android:id="@+id/sunsetImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:srcCompat="@drawable/moon"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:layout_marginEnd="@dimen/eight_dp"
+        app:layout_constraintTop_toBottomOf="@+id/llToday"
+        app:layout_constraintRight_toLeftOf="@+id/sunset_tv"
+        />
+
+    <TextView
+        android:id="@+id/sunset_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7:22 PM"
+        app:layout_constraintEnd_toEndOf="@+id/llToday"
+        app:layout_constraintTop_toTopOf="@+id/sunsetImage"
+        app:layout_constraintBottom_toBottomOf="@+id/sunsetImage"
+        android:layout_marginTop="@dimen/eight_dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp">
         <activity
+            android:name=".ui.activities.DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashMainActivity"
             android:exported="true">
             <intent-filter>

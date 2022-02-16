@@ -8,5 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    //GreyBg : #f7f7f7
+    //textColor : #707070
+    //Bold text Color : #393939
+    //visibility : #afafb3
+
     <color name="sky_blue">#03A9F4</color>
+    <color name="text_color_bold">#393939</color>
+    <color name="text_color">#afafb3</color>
+    <color name="greyBg">#f7f7f7</color>
+    <color name="grey">#eceff4</color>
 </resources>
