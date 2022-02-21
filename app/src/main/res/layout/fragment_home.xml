@@ -7,11 +7,22 @@
     android:padding="@dimen/sixteen_dp"
     tools:context=".ui.fragments.HomeFragment">
 
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:visibility="gone"
+        />
+
     <TextView
         android:id="@+id/city_state_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calicut, Kerala"
+        tools:text="Calicut, Kerala"
         android:textColor="@color/black"
         android:textSize="@dimen/twenty_four_sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,17 +32,50 @@
         android:id="@+id/day_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sunday, 1 AM"
+        tools:text="Sunday, 1 AM"
         android:textSize="@dimen/sixteen_sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/city_state_tv" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchPlaceTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@+id/day_time_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="@dimen/eight_dp"
+        android:hint="@string/search_place">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchPlaceET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textAutoComplete"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/searchBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_search"
+        android:layout_marginEnd="@dimen/sixteen_dp"
+        app:layout_constraintEnd_toEndOf="@+id/searchPlaceTIL"
+        app:layout_constraintTop_toTopOf="@+id/searchPlaceTIL"
+        app:layout_constraintBottom_toBottomOf="@+id/searchPlaceTIL"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.3" />
 
 
     <ImageView
@@ -48,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/eight_dp"
-        android:text="28°"
+        tools:text="28°"
         android:textColor="@color/black"
         android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="@id/weather_image"
@@ -56,9 +100,10 @@
         app:layout_constraintTop_toBottomOf="@+id/weather_image" />
 
     <TextView
+        android:id="@+id/weather_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Partly Cloudy"
+        tools:text="Partly Cloudy"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="@id/temp_tv"
         app:layout_constraintRight_toRightOf="@id/temp_tv"
@@ -84,7 +129,7 @@
             android:id="@+id/day_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Today"
+            android:text="@string/today"
             android:textColor="@color/black"
             android:textSize="@dimen/sixteen_sp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -94,8 +139,9 @@
             android:id="@+id/pressure_title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/eight_dp"
             android:layout_marginTop="@dimen/sixteen_dp"
-            android:text="Pressure"
+            android:text="@string/pressure"
             app:layout_constraintLeft_toLeftOf="@+id/day_tv"
             app:layout_constraintTop_toBottomOf="@+id/day_tv" />
 
@@ -104,7 +150,7 @@
             android:id="@+id/pressure_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="810mb"
+            tools:text="810mb"
             android:textColor="@color/black"
             android:textSize="@dimen/sixteen_sp"
             app:layout_constraintLeft_toLeftOf="@+id/pressure_title_tv"
@@ -118,7 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/sixteen_dp"
             android:layout_marginTop="@dimen/sixteen_dp"
-            android:text="Visibility"
+            android:text="@string/visibility"
             app:layout_constraintLeft_toRightOf="@id/pressure_title_tv"
             app:layout_constraintRight_toLeftOf="@+id/humidity_title_tv"
             app:layout_constraintTop_toBottomOf="@+id/day_tv" />
@@ -128,7 +174,7 @@
             android:id="@+id/visibility_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5 Km"
+            tools:text="5 Km"
             android:textColor="@color/black"
             android:textSize="@dimen/sixteen_sp"
             app:layout_constraintLeft_toLeftOf="@+id/visibility_title_tv"
@@ -141,7 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/sixteen_dp"
             android:layout_marginTop="@dimen/sixteen_dp"
-            android:text="Humidity"
+            android:text="@string/humidity"
             app:layout_constraintLeft_toRightOf="@id/visibility_title_tv"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/day_tv" />
@@ -151,7 +197,7 @@
             android:id="@+id/humidity_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="94 %"
+            tools:text="94 %"
             android:textColor="@color/black"
             android:textSize="@dimen/sixteen_sp"
             app:layout_constraintLeft_toLeftOf="@+id/humidity_title_tv"
@@ -173,9 +219,10 @@
         />
 
     <TextView
+        android:id="@+id/sunriseTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="6:04 AM"
+        tools:text="6:04 AM"
         app:layout_constraintLeft_toRightOf="@+id/sunImage"
         app:layout_constraintTop_toTopOf="@+id/sunImage"
         app:layout_constraintBottom_toBottomOf="@+id/sunImage"
@@ -200,7 +247,7 @@
         android:id="@+id/sunset_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="7:22 PM"
+        tools:text="7:22 PM"
         app:layout_constraintEnd_toEndOf="@+id/llToday"
         app:layout_constraintTop_toTopOf="@+id/sunsetImage"
         app:layout_constraintBottom_toBottomOf="@+id/sunsetImage"

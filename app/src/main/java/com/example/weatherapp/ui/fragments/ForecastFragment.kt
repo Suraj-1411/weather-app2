@@ -1,15 +1,18 @@
 package com.example.weatherapp.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weatherapp.R
 import com.example.weatherapp.base.BaseFragment
+import com.example.weatherapp.data.Resource
+import com.example.weatherapp.data.displayToast
+import com.example.weatherapp.data.getWeekList
 import com.example.weatherapp.databinding.FragmentForecastBinding
 import com.example.weatherapp.ui.adapters.ForecastWeekAdapter
+import com.example.weatherapp.viewmodel.DashBoardViewModel
 
 
 class ForecastFragment : BaseFragment(R.layout.fragment_forecast) {
@@ -20,6 +23,7 @@ class ForecastFragment : BaseFragment(R.layout.fragment_forecast) {
         mBinding = FragmentForecastBinding.bind(view)
 
         mBinding.recyclerView.layoutManager=LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        mBinding.recyclerView.adapter= ForecastWeekAdapter()
+        mBinding.recyclerView.adapter= ForecastWeekAdapter(getWeekList() ?: emptyList())
+
     }
 }

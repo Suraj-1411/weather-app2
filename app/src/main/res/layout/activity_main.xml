@@ -59,6 +59,7 @@
         android:background="@drawable/blue_bg"
         android:textColor="@color/white"
         android:textAllCaps="false"
+        android:visibility="gone"
         android:text="@string/get_started"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splash_text_"

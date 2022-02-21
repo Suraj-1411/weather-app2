@@ -3,12 +3,25 @@ package com.example.weatherapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherapp.R
+import com.example.weatherapp.data.models.ForecastWeekModel
 import com.example.weatherapp.databinding.ForecastWeekItemBinding
 
-class ForecastWeekAdapter : RecyclerView.Adapter<ForecastWeekAdapter.ForecastViewHolder>() {
+class ForecastWeekAdapter(private val list: List<ForecastWeekModel>) :
+    RecyclerView.Adapter<ForecastWeekAdapter.ForecastViewHolder>() {
 
-    inner class ForecastViewHolder(binding: ForecastWeekItemBinding) :
+    inner class ForecastViewHolder(private val binding: ForecastWeekItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        fun bind(forecastWeekModel: ForecastWeekModel) {
+            binding.dayTv.text = forecastWeekModel.day?.uppercase()?.trim()
+            binding.tempTv.text = String.format(
+                "%s%s", forecastWeekModel.high.toString(), binding.tempTv.context.getString(
+                    R.string.degree
+                ).trim()
+            )
+            binding.temp2.text = forecastWeekModel.low.toString().trim()
+            binding.weatherStatus.text = forecastWeekModel.text?.trim()
+        }
 
     }
 
@@ -19,7 +32,8 @@ class ForecastWeekAdapter : RecyclerView.Adapter<ForecastWeekAdapter.ForecastVie
     }
 
     override fun onBindViewHolder(holder: ForecastViewHolder, position: Int) {
+        holder.bind(list[position])
     }
 
-    override fun getItemCount(): Int = 10
+    override fun getItemCount(): Int = list.size
 }

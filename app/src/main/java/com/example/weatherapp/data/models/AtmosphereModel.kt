@@ -1,10 +1,12 @@
 package com.example.weatherapp.data.models
 
+import kotlinx.serialization.Serializable
 import java.math.BigDecimal
 
+@Serializable
 data class AtmosphereModel(
     var humidity: Int? = 0,
-    var visibility: Int? = 0,
-    var pressure: BigDecimal? = BigDecimal.ZERO,
+    var visibility: Float? = 0f,
+    var pressure: Double? = 0.0,
     var rising: Int? = 0
 )

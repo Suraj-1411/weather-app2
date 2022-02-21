@@ -9,4 +9,11 @@
     <string name="settings_txt">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="humidity">Humidity</string>
+    <string name="visibility">Visibility</string>
+    <string name="pressure">Pressure</string>
+    <string name="today">Today</string>
+    <string name="degree">°</string>
+    <string name="search_place">search place</string>
+    <string name="place_txt">Please Enter any Place</string>
 </resources>
